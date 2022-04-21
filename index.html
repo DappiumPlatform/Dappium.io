@@ -1,0 +1,1819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+  <link href="assets/images/dappium_white_favicon.png" rel="icon" />
+  <title>Dappium Documentation</title>
+  <meta name="description" content="Dappium Platform API Documentation">
+
+
+  <!-- Stylesheet
+============================== -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+  <!-- Font Awesome Icon -->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" />
+  <!-- Magnific Popup -->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/magnific-popup/magnific-popup.min.css" />
+  <!-- Highlight Syntax -->
+  <link rel="stylesheet" type="text/css" href="assets/vendor/highlight.js/styles/github.css" />
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+</head>
+
+<body class="box" data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <!-- Preloader End -->
+
+  <!-- Document Wrapper   
+=============================== -->
+  <div id="main-wrapper">
+
+    <!-- Header
+  ============================ -->
+    <header id="header" class="sticky-top">
+      <!-- Navbar -->
+      <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
+        <div class="container-fluid">
+          <!-- Sidebar Toggler -->
+          <button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span
+              class="w-75"></span><span class="w-50"></span></button>
+
+          <!-- Logo -->
+          <a class="logo ml-md-3" href="https://dappium.io/" title=""> <img
+              src="assets/images/dappium_white.png" alt="iDocs Template" style="width: 200px;" /> </a>
+          <!--<span class="text-2 ml-2">v0.1</span>-->
+          <!-- Logo End -->
+
+          <!-- Navbar Toggler -->
+          <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+            data-target="#header-nav"><span></span><span></span><span></span></button>
+
+          <!--<div id="header-nav" class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+              <li><a target="_blank" href="#">Dashboard</a></li>
+              <li class="dropdown"> <a class="dropdown-toggle" href="#">Dropdown</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#">Dropdown Action</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another Action</a></li>
+                      <li><a class="dropdown-item" href="#">Something Else Here</a></li>
+                      <li><a class="dropdown-item" href="#">Another Link</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Another Action</a>
+                  <li><a class="dropdown-item" href="#">Something Else Here</a></li>
+                </ul>
+              </li>
+              <li><a target="_blank" href="#">Support</a></li>
+            </ul>
+          </div>-->
+          <ul class="social-icons social-icons-sm ml-lg-2 mr-2">
+            
+            <li class="social-icons-twitter"><a data-toggle="tooltip" href="https://twitter.com/DappiumPlatform"
+                target="_blank" title="" data-original-title="Twitter"><i class="fab fa-twitter"></i></a></li>
+            <li class="social-icons-facebook"><a data-toggle="tooltip"
+                href="https://www.facebook.com/profile.php?id=100079663188933" target="_blank" title=""
+                data-original-title="Facebook"><i class="fab fa-facebook"></i></a></li>
+            <li class="social-icons-instagram"><a data-toggle="tooltip"
+                  href="https://www.instagram.com/dappium.io/" target="_blank" title=""
+                  data-original-title="instagram"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Navbar End -->
+    </header>
+    <!-- Header End -->
+
+    <!-- Content
+  ============================ -->
+    <div id="content" role="main">
+
+      <!-- Sidebar Navigation
+	============================ -->
+      <div class="idocs-navigation bg-dark-1 docs-navigation-dark">
+        <!--idocs-navigation bg-light-->
+        <ul class="nav flex-column ">
+          <li class="nav-item"><a class="nav-link active" href="#idocs_start">Getting Started</a>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#idocs_introduction">Introduction</a></li>
+              <li class="nav-item"><a class="nav-link" href="#idocs_authentication">Authentication</a></li>
+              <li class="nav-item"><a class="nav-link" href="#idocs_make_requests">Making Requests</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#idocs_user_main">Game</a>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#idocs_readTokenGame">readTokenGame</a></li>
+              <li class="nav-item"><a class="nav-link" href="#idocs_readCollectionInGame">readCollectionInGame</a></li>
+
+              <!--<li class="nav-item"><a class="nav-link" href="#idocs_footer">Footer</a></li>
+              <li class="nav-item"><a class="nav-link" href="#idocs_box_layout">Box Layout</a></li>-->
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="#idocs_player">Player</a>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#idocs_createPlayer">createPlayer</a></li>
+              <li class="nav-item"><a class="nav-link" href="#idocs_readPlayerWallet">readPlayerWallet</a></li>
+              <li class="nav-item"><a class="nav-link" href="#idocs_readPlayerTokenBallance">readPlayerTokenBalance</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#idocs_readPlayerAssets">readPlayerAssets</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="#idocs_mint">Mint</a>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#idocs_mintNFT">mintNFT</a></li>
+              <li class="nav-item"><a class="nav-link" href="#idocs_mintFT">mintFT</a></li>
+              <li class="nav-item"><a class="nav-link" href="#idocs_burnAssets">burnAssets</a></li>
+              <!--<li class="nav-item"><a class="nav-link" href="#idocs_table">Table</a></li>
+              <li class="nav-item"><a class="nav-link" href="#idocs_icons">Icons</a></li>
+              <li class="nav-item"><a class="nav-link" href="#idocs_image">Image</a></li>
+              <li class="nav-item"><a class="nav-link" href="#idocs_video">Video</a></li>-->
+            </ul>
+          </li>
+
+
+
+          <li class="nav-item"><a class="nav-link" href="#idocs_buy">Buy</a>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#idocs_buyNFT">buyNFT</a></li>
+              <li class="nav-item"><a class="nav-link" href="#idocs_buyNFTwithToken">buyNFTwithToken</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="#idocs_transfer">Transfer</a>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#idocs_readTransactions">readTransactions</a></li>
+              <li class="nav-item"><a class="nav-link" href="#idocs_transferNFTPToA">transferNFTPlayerToAdmin</a></li>
+              <li class="nav-item"><a class="nav-link" href="#idocs_transferNFTAToP">transferNFTAdmintoPlayer</a></li>
+              <li class="nav-item"><a class="nav-link" href="#idocs_transferNFTPToP">transferNFTPlayertoPlayer</a></li>
+              <li class="nav-item"><a class="nav-link"
+                  href="#idocs_transferTokenAdminToPlayer">transferTokenAdminToPlayer</a></li>
+              <li class="nav-item"><a class="nav-link"
+                  href="#idocs_transferTokenPlayerToAdmin">transferTokenPlayerToAdmin</a></li>
+              <li class="nav-item"><a class="nav-link"
+                  href="#idocs_transferTokenPlayerToPlayer">transferTokenPlayerToPlayer</a></li>
+
+            </ul>
+          </li>
+
+
+          <li class="nav-item"><a class="nav-link" href="#idocs_apiplayground">API Playground</a>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#idocs_apiinputs">Api Inputs</a></li>
+            </ul>
+          </li>
+
+          <!--
+          <li class="nav-item"><a class="nav-link" href="#idocs_faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#idocs_source_credits">Source & Credits</a></li>
+          <li class="nav-item"><a class="nav-link" href="#idocs_support">Support</a></li>
+          <li class="nav-item"><a class="nav-link" href="#idocs_changelog">Changelog</a>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#v1-1">v1.1</a></li>
+              <li class="nav-item"><a class="nav-link" href="#v1-0">v1.0</a></li>
+            </ul>
+          </li>-->
+        </ul>
+      </div>
+
+      <!-- Docs Content
+	============================ -->
+      <div class="idocs-content">
+        <div class="container">
+
+          <!-- Getting Started
+		============================ -->
+          <section id="idocs_start">
+            <h1>Documentation of Dappium APIs</h1>
+
+            <!--<p class="lead">Thank you so much for purchasing our item from themeforest.</p>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6 col-lg-4" style="padding-right: 50px;">
+                <ul class="list-unstyled">
+                  <li><strong>Version:</strong> 0.1</li>
+                  <li><strong>Author:</strong> <a href="http://www.argedor.com" target="_blank">Argedor</a>
+                  </li>
+                  
+                </ul>
+                
+              </div>
+              <div class="col-sm-6 col-lg-4" >
+                <ul class="list-unstyled">
+                  <li><strong class="font-weight-700">Created:</strong> 1 January, 2022</li>
+                  <li><strong>Update:</strong> 1 January, 2022</li>
+                </ul>
+              </div>
+            </div>
+            -->
+
+
+            <div class="row" style="display: flex; flex-direction: column; justify-content: center;">
+              <strong style="text-align: center;">Download Postman Collection</strong>
+              <a style="text-align: center" href="https://www.getpostman.com/collections/8070debee94795848a0a"
+                target="_blank">
+                <img src="assets/images/download.jpg" alt="" style="width: 30%" />
+              </a>
+            </div>
+            <!--<p class="alert alert-info">If you have any questions that are beyond the scope of this help file, Please
+              feel free to email via <a target="_blank"
+                href="https://themeforest.net/user/harnishdesign/#contact?ref=HarnishDesign">Item Support Page</a>.</p>-->
+          </section>
+
+          <hr class="divider">
+
+          <!-- Introduction
+		============================ -->
+          <section id="idocs_introduction">
+            <h2>Introduction</h2>
+            <p class="lead">Welcome to the Dappium API</p>
+
+            <p>The Dappium Website API is a JSON-RPC service that exposes data from your website in
+              JSON format for creating your own features and website integrations. The API is currently in beta and will
+              be receiving several updates as we come out with them.
+              This being said, please be sure to check this source for any new features or updates as often as possible.
+            </p>
+            <p>Some API calls will require your secret API key.
+              This is used to ensure the protection of sensitive data and prevent unknown users
+              from executing certain actions.
+              Your API key is only shown once when it is generated.
+              Please write down the code and make sure your key is not being shared with other individuals.
+            </p>
+          </section>
+
+          <hr class="divider">
+
+          <!-- Enabling APIs
+		============================ -->
+          <section id="idocs_authentication">
+            <h2>Authentication</h2>
+            <p>Each API method in the documentation lists the types of authentication available for it:</p>
+            <h4>Secret Key</h4>
+            <p>
+              <li>Specify "api_key" in the request params.</li>
+              <li>This uses the global Secret API Key or Custom API Key found in Admin - Settings - API.</li>
+            </p>
+            <h6> <b> Token API Key </b> </h6>
+            <p>For the System APIs user should login first, after this part system will send user a new token which has
+              an unique key.</p>
+            <p>In order to making a request to the API user should put <strong>value</strong> to the
+              <strong>key</strong>. Also in to the <strong>Authorization</strong> part user should put
+              <strong>token</strong>.
+            </p>
+
+
+            <!--<pre><code class="html">&lt;!-- Logo --&gt; 
+&lt;a class=&quot;logo ml-3 ml-md-0&quot; href=&quot;index.html&quot; title=&quot;iDocs&quot;&gt;
+&lt;img src=&quot;images/logo-light.png&quot; alt=&quot;iDocs&quot;/&gt;
+&lt;/a&gt;
+&lt;!-- Logo End --&gt;
+</code></pre>-->
+
+          </section>
+
+
+          <hr class="divider">
+
+
+          <!-- Making Requests
+		============================ -->
+          <section id="idocs_make_requests">
+            <h2>Making request</h2>
+            <p>Dappium.io contains two types of APIs. The first one is for System APIs and the second one is Game APIs.
+            </p>
+            <p>For the Game APIs user should login first, after this part system will send user a new token which has an
+              unique key.</p>
+            <p>In order to making a request to the API user should put <strong>apikey</strong> to the
+              <strong>key</strong>. Also in to the <strong>value</strong> part user should put <strong>created game's
+                api key</strong>.
+            </p>
+            <!--
+            <p>We have include a Custom CSS File in the <code>css</code> Folder so that you can better handle your
+              Customizations for New Styles or
+              Overwriting Default Theme Styles. Simply add all your Custom CSS Codes in the <code>css/custom.css</code>
+              File and link it in the Document <code>&lt;head&gt;</code> after the <code>css/stylesheet.css</code>
+              Linking. Also make sure that this is the Last Linked CSS File in the Document <code>&lt;head&gt;</code> so
+              that your Custom CSS Styles are Overwritten properly.</p>
+            <pre><code class="html">&lt;head&gt;
+&lt;!-- Stylesheet
+============================== --&gt;
+&lt;!-- Bootstrap --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/vendor/bootstrap/css/bootstrap.min.css&quot; /&gt;
+&lt;!-- Font Awesome Icon --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/vendor/font-awesome/css/all.min.css&quot; /&gt;
+&lt;!-- Magnific Popup --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/vendor/magnific-popup/magnific-popup.min.css&quot; /&gt;
+&lt;!-- Highlight Syntax --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/vendor/highlight.js/styles/github.css&quot; /&gt;
+&lt;!-- Custom Stylesheet --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/css/stylesheet.css&quot; /&gt;
+
+&lt;!-- Here goes your custom.css
+============================================= --&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;assets/css/custom.css&quot; /&gt;
+&lt;/head&gt;</code></pre>-->
+          </section>
+
+          <hr class="divider">
+
+          <!-- Authentication
+		============================ -->
+
+
+          <!-- Game
+		============================ -->
+          <section id="idocs_user_main">
+            <h2>Game</h2>
+            <p class="lead mb-5">Documentation and examples for readTokenGame and readCollectionInGame APIs.</p>
+          </section>
+
+
+
+          <!-- wallet
+		============================ -->
+          <section id="idocs_readTokenGame">
+            <h3>readTokenGame</h3>
+            <p>This request shows the in-Game tokens by getting the informations of the token and games.</p>
+
+
+            <pre style="display: grid; grid-template-columns:auto auto; gap:1rem;">
+
+              <code class="curl">
+                <h5>Query</h5>
+query readTokenGame {
+  readTokenGame {
+      tokenGames {
+          token {
+              id
+              name
+              symbol
+              supply
+              contractAddress
+              createdAt
+          }
+          game {
+              id
+              name
+              description
+              image
+              createdAt
+              apiKey
+              companyId
+          }
+      }
+      info {
+          status
+          message
+      }
+  }
+}
+              </code>
+              
+              <code class="curl">
+                <h5>GraphQL Variables</h5>
+{
+
+}
+                              </code>
+            </pre>
+
+
+          </section>
+          <!-- Create User
+		============================ -->
+          <section id="idocs_readCollectionInGame">
+            <h2>readCollectionInGame</h2>
+            <p>The request that takes collection and asset informations to read collections.</p>
+
+
+            <pre style="display: grid; grid-template-columns:auto auto; gap:1rem;">
+
+              <code class="curl">
+                <h5>Query</h5>
+query readCollectionsInGame {
+    readCollectionsInGame {
+        collection {
+            id
+            name
+            description
+            image
+            contractAddres
+            metaDataURL
+            imageURL
+            type
+            count
+            price
+            network
+            relaseDate
+            isLaunchPad
+            Assets {
+                id
+                name
+                imageURL
+                metadataURL
+                metadata
+                tokenId
+            }
+        }
+        info {
+            status
+            message
+        }
+    }
+}
+              </code>
+              
+              <code class="curl">
+                <h5>GraphQL Variables</h5>
+{
+  
+}
+                              </code>
+            </pre>
+
+
+
+          </section>
+
+
+
+          </section>
+
+          <hr class="divider">
+
+          <!-- Player
+		  ============================ -->
+          <section id="idocs_player">
+            <h3>Player</h3>
+            <p>Documentation and examples for createPlayer, readPlayerWallet, readPlayerTokenBallance and
+              readPlayerAssets APIs.</p>
+
+          </section>
+
+          <!-- Create Player
+  ============================ -->
+          <section id="idocs_createPlayer">
+            <h3>createPlayer</h3>
+            <p>The request that takes playerGameId in order to create new player.</p>
+            <pre style="display: grid; grid-template-columns:auto auto; gap:1rem;">
+
+          <code class="curl">
+            <h5>Query</h5>
+mutation createPlayer ($player: createPlayerInput) {
+  createPlayer (player: $player) {
+      status
+      message
+  }
+}
+          </code>
+          
+          <code class="curl">
+            <h5>GraphQL Variables</h5>
+{
+  "player": {
+    "playerGameId": ""
+  }
+}
+                          </code>
+        </pre>
+
+
+          </section>
+          <!-- Read Player Wallet
+  ============================ -->
+          <section id="idocs_readPlayerWallet">
+            <h3>readPlayerWallet</h3>
+            <p>This request helps to get wallet info for the specific player. To get this information playerGameId
+              should be initialized.</p>
+            <pre style="display: grid; grid-template-columns:auto auto; gap:1rem;">
+
+            <code class="curl">
+              <h5>Query</h5>
+query readPlayerWallet ($playerGameId: String!, $network: String) {
+  readPlayerWallet (playerGameId: $playerGameId, network: $network) {
+      wallets {
+          id
+          type
+          publicKey
+          privateKey
+          createdAt
+          balance
+      }
+      info {
+          status
+          message
+      }
+  }
+}
+            </code>
+            
+            <code class="curl">
+              <h5>GraphQL Variables</h5>
+{
+  "playerGameId": "",
+  "network": ""
+}
+                            </code>
+          </pre>
+
+          </section>
+          <!-- Read Player Token Balance
+  ============================ -->
+          <section id="idocs_readPlayerTokenBallance">
+            <h3>readPlayerTokenBallance</h3>
+            <p>This request helps to get ballance info for the specific player. To get this information playerGameId
+              should be initialized.</p>
+            <pre style="display: grid; grid-template-columns:auto auto; gap:1rem;">
+
+            <code class="curl">
+              <h5>Query</h5>
+query readPlayerTokenBalance ($playerGameId: String!, $network: String) {
+  readPlayerTokenBalance (playerGameId: $playerGameId, network: $network) {
+      tokenBalance {
+          tokenId
+          balance
+          tokenName
+          tokenSymbol
+      }
+      info {
+          status
+          message
+      }
+  }
+}
+            </code>
+            
+            <code class="curl">
+              <h5>GraphQL Variables</h5>
+{
+  "playerGameId": "",
+  "network": ""
+}
+                            </code>
+          </pre>
+
+          </section>
+          <!-- Read Player Assets
+  ============================ -->
+          <section id="idocs_readPlayerAssets">
+            <h3>readPlayerAssets</h3>
+            <p>This request helps to get assets for the specific player. To get this information playerGameId and
+              collectionId should be initialized.</p>
+            <pre style="display: grid; grid-template-columns:auto auto; gap:1rem;">
+
+            <code class="curl">
+              <h5>Query</h5>
+query readPlayerAssets ($input: ReadPlayerAssetsInput) {
+  readPlayerAssets (input: $input) {
+      playerAssets
+      info {
+          status
+          message
+      }
+  }
+}
+            </code>
+            
+            <code class="curl">
+              <h5>GraphQL Variables</h5>
+{
+  "input": {
+    "playerGameId": "",
+    "collectionId": "",
+    "network": ""
+  }
+}
+                            </code>
+          </pre>
+
+
+
+
+          </section>
+
+          <hr class="divider">
+
+          <!-- Mint
+		============================ -->
+          <section id="idocs_mint">
+            <h2>Mint</h2>
+            <p class="lead mb-5">Documentation and examples for mintNFT, minFT and burnAssets APIs.</p>
+            <!--<h4>Light Footer</h4>
+            <p>Footer with white background Color & Dark text. See below code for more inforamtion.</p>
+            <pre><code class="html">&lt;!-- Footer
+============================================= --&gt;
+  &lt;footer id=&quot;footer&quot; class=&quot;section bg-light&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+    	..........
+    &lt;/div&gt;
+  &lt;/footer&gt;
+&lt;!-- Footer end --&gt;</code></pre>
+            <h4>Dark Footer</h4>
+            <p>Footer with dark background color & Light text. See below code for more inforamtion.</p>
+            <p>Add the <code>.bg-dark</code> and <code>.footer-text-light</code> Class to the <code>footer</code> Tag to
+              display a Dark footer.</p>
+            <pre><code class="html">&lt;!-- Footer
+============================================= --&gt;
+&lt;footer id=&quot;footer&quot; class=&quot;section bg-dark footer-text-light&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+    	..........
+    &lt;/div&gt;
+&lt;/footer&gt;
+&lt;!-- Footer end --&gt;</code></pre>-->
+          </section>
+
+
+          <!-- mintNFT
+		============================ -->
+          <section id="idocs_mintNFT">
+            <h2>mintNFT</h2>
+            <p class="text-4">The request that takes playerGameId, collectionId and network to mint NFT.</p>
+            <pre style="display: grid; grid-template-columns:auto auto; gap:1rem;">
+
+              <code class="curl">
+                <h5>Query</h5>
+mutation mintNFT ($mint: MintNFTInput) {
+  mintNFT (mint: $mint) {
+      status
+      message
+  }
+}
+              </code>
+              
+              <code class="curl">
+                <h5>GraphQL Variables</h5>
+{
+  "mint": {
+    "playerGameId": "",
+    "collectionId": "",
+    "network": ""
+  }
+}                           </code>
+            </pre>
+
+
+          </section>
+
+
+          <!-- mintFT
+		============================ -->
+          <section id="idocs_mintFT">
+            <h2>mintFT</h2>
+            <p class="text-4">The request takes playerGameId, collectionId, count and network to mint FT.</p>
+            <pre style="display: grid; grid-template-columns:auto auto; gap:1rem;">
+
+              <code class="curl">
+                <h5>Query</h5>
+mutation mintFT ($mint: MintFTInput) {
+  mintFT (mint: $mint) {
+      status
+      message
+  }
+}
+              </code>
+              
+              <code class="curl">
+                <h5>GraphQL Variables</h5>
+{
+  "mint": {
+    "playerGameId": "",
+    "collectionId": "",
+    "count": "",
+    "network": ""
+  }
+}
+                              </code>
+            </pre>
+
+
+
+          </section>
+
+          <!-- burnAssets
+		============================ -->
+          <section id="idocs_burnAssets">
+            <h2>burnAssets</h2>
+            <p class="text-4">This query is for burning the assets. In order to do that it takes collectionId, assetId and network.</p>
+            <pre style="display: grid; grid-template-columns:auto auto; gap:1rem;">
+
+              <code class="curl">
+                <h5>Query</h5>
+mutation burnAsset ($burn: BurnAssetInput) {
+  burnAsset (burn: $burn) {
+      status
+      message
+  }
+}
+              </code>
+              
+              <code class="curl">
+                <h5>GraphQL Variables</h5>
+{
+  "burn": {
+    "collectionId": "",
+    "assetId": "",
+    "network": ""
+  }
+}
+                              </code>
+            </pre>
+
+
+          </section>
+
+
+
+          <hr class="divider">
+
+
+
+          <!-- Collection
+		============================ -->
+          <section id="idocs_buy">
+            <h2>Buy</h2>
+            <p class="text-4">Documentation and examples for buyNFT and buyNFTwithToken APIs.
+            </p>
+
+
+          </section>
+
+
+          <!-- buyNFT
+		============================ -->
+          <section id="idocs_buyNFT">
+            <h2>buyNFT</h2>
+            <p>The request that takes
+              <li>playerGameId </li>
+              <li>collectionId</li>
+              <li>assetId</li>
+              <li>amount</li>
+              <li>network</li>
+              <br>
+              to buy a NFT.
+            </p>
+            <pre style="display: grid; grid-template-columns:auto auto; gap:1rem;">
+
+              <code class="curl">
+                <h5>Query</h5>
+mutation buyNFT ($transfer: ButNFTWithAVAX) {
+  buyNFT (transfer: $transfer) {
+      status
+      message
+  }
+}
+              </code>
+              
+              <code class="curl">
+                <h5>GraphQL Variables</h5>
+{
+  "transfer": {
+    "playerGameId": "",
+    "collectionId": "",
+    "assetId": "",
+    "amount": "",
+    "network": ""
+  }
+}
+                              </code>
+            </pre>
+
+          </section>
+
+          <!-- buyNFTwithToken
+		  ============================ -->
+          <section id="idocs_buyNFTwithToken">
+            <h2>buyNFTwithToken</h2>
+            <p>The request that takes
+              <li>playerGameId </li>
+              <li>tokenId</li>
+              <li>amount</li>
+              <li>collectionId</li>
+              <li>assetId</li>
+              <li>network</li>
+              <br>
+              to buy a NFT with specified token.
+            </p>
+            <pre style="display: grid; grid-template-columns:auto auto; gap:1rem;">
+
+              <code class="curl">
+                <h5>Query</h5>
+mutation buyNFTWithToken ($transfer: BuyNFTWithToken) {
+  buyNFTWithToken (transfer: $transfer) {
+      status
+      message
+  }
+}
+              </code>
+              
+              <code class="curl">
+                <h5>GraphQL Variables</h5>
+{
+  "transfer": {
+    "playerGameId": "",
+    "tokenId": "",
+    "amount": "",
+    "collectionId": "",
+    "assetId": "",
+    "network": ""
+  }
+}
+                              </code>
+            </pre>
+
+
+
+          </section>
+
+
+
+          <hr class="divider">
+
+
+          <!-- Transactions
+		  ============================ -->
+          <section id="idocs_transfer">
+            <h3>Transfers</h3>
+            <p> You can access to transaction informations from this section. </p>
+          </section>
+
+          <!-- Read Player Assets
+		  ============================ -->
+          <section id="idocs_readTransactions">
+            <h3>readTransactions</h3>
+            <p>This request helps to read transactions informations.</p>
+            <pre style="display: grid; grid-template-columns:auto auto; gap:1rem;">
+
+              <code class="curl">
+                <h5>Query</h5>
+query readTransaction ($network: String) {
+  readTransaction (network: $network) {
+      transactions {
+          id
+          message
+          type
+          createdAt
+      }
+      info {
+          status
+          message
+      }
+  }
+}
+              </code>
+              
+              <code class="curl">
+                <h5>GraphQL Variables</h5>
+{
+  "network": ""
+}
+                              </code>
+            </pre>
+          </section>
+          <!-- transferNFT
+		  ============================ -->
+          <section id="idocs_transferNFTptoa">
+            <h3>transferNFTPlayerToAdmin</h3>
+            <p>For transfering NFT from player to admin you need to initialize playerGameId, collectionId and assetId.
+            </p>
+
+            <pre style="display: grid; grid-template-columns:auto auto; gap:1rem;">
+
+          <code class="curl">
+            <h5>Query</h5>
+mutation transferNFTPlayerToAdmin ($transfer: TransferNFT) {
+  transferNFTPlayerToAdmin (transfer: $transfer) {
+      status
+      message
+  }
+}
+          </code>
+          
+          <code class="curl">
+            <h5>GraphQL Variables</h5>
+{
+  "transfer": {
+    "playerGameId": "",
+    "collectionId": "",
+    "assetId": "",
+    "network": ""
+  }
+}
+                          </code>
+        </pre>
+          </section>
+
+
+          <!-- transferNFTAtoP
+  ============================ -->
+          <section id="idocs_transferNFTAtoP">
+            <h3>transferNFTAdmintoPlayer</h3>
+            <p>For transfering NFT from admin to player you need to initialize playerGameId, collectionId and assetId.
+            </p>
+
+            <pre style="display: grid; grid-template-columns:auto auto; gap:1rem;">
+
+          <code class="curl">
+            <h5>Query</h5>
+mutation transferNFTAdminToPlayer ($transfer: TransferNFT) {
+  transferNFTAdminToPlayer (transfer: $transfer) {
+      status
+      message
+  }
+}
+          </code>
+          
+          <code class="curl">
+            <h5>GraphQL Variables</h5>
+{
+  "transfer": {
+    "playerGameId": "",
+    "collectionId": "",
+    "assetId": "",
+    "network": ""
+  }
+}
+                          </code>
+        </pre>
+
+          </section>
+
+          <!-- transferNFTPtoP
+  ============================ -->
+          <section id="idocs_transferNFTPtoP">
+            <h3>transferNFTPlayertoPlayer</h3>
+            <p>In order to transfer NFT from one player to another player fromplayerGameId, toplayerGameId, tokenId and
+              amount should be initialized.</p>
+            <pre style="display: grid; grid-template-columns:auto auto; gap:1rem;">
+
+            <code class="curl">
+              <h5>Query</h5>
+mutation transferNFTPlayerToPlayer ($transfer: TransferNFTPlayer) {
+  transferNFTPlayerToPlayer (transfer: $transfer) {
+      status
+      message
+  }
+}
+            </code>
+            
+            <code class="curl">
+              <h5>GraphQL Variables</h5>
+{
+  "transfer": {
+    "fromplayerGameId": "",
+    "toplayerGameId": "",
+    "collectionId": "",
+    "assetId": "",
+    "network": ""
+  }
+}
+                            </code>
+          </pre>
+          </section>
+
+          <!-- burnAssets
+  ============================ -->
+
+
+
+
+          <!-- transferToken Admin to player
+  ============================ -->
+
+          <section id="idocs_transferTokenAdminToPlayer">
+            <h3>transferTokenAdminToPlayer</h3>
+            <p>For transfering Token from admin to player you need to initialize playerGameId, tokenId and amount.</p>
+            <pre style="display: grid; grid-template-columns:auto auto; gap:1rem;">
+
+          <code class="curl">
+            <h5>Query</h5>
+mutation transferTokenAdminToPlayer ($transfer: TokenTransferInput) {
+  transferTokenAdminToPlayer (transfer: $transfer) {
+      status
+      message
+  }
+}
+          </code>
+          
+          <code class="curl">
+            <h5>GraphQL Variables</h5>
+{
+  "transfer": {
+    "playerGameId": "",
+    "tokenId": "",
+    "amount": "",
+    "network": ""
+  }
+}
+                          </code>
+        </pre>
+          </section>
+
+          <!-- transfer Token player to Admin
+  ============================ -->
+          <section id="idocs_transferTokenPlayerToAdmin">
+            <h3>transferTokenPlayerToAdmin</h3>
+            <p>For transfering Token from player to admin you need to initialize playerGameId, tokenId and amount.</p>
+            <pre style="display: grid; grid-template-columns:auto auto; gap:1rem;">
+
+          <code class="curl">
+            <h5>Query</h5>
+mutation transferTokenPlayerToAdmin ($transfer: TokenTransferInput) {
+  transferTokenPlayerToAdmin (transfer: $transfer) {
+      status
+      message
+  }
+}
+          </code>
+          
+          <code class="curl">
+            <h5>GraphQL Variables</h5>
+{
+  "transfer": {
+    "playerGameId": "",
+    "tokenId": "",
+    "amount": "",
+    "network": ""
+  }
+}
+                          </code>
+        </pre>
+          </section>
+
+
+          <!-- transfer Token Player to Player
+  ============================ -->
+          <section id="idocs_transferTokenPlayerToPlayer">
+            <h3>transferTokenPlayerToPlayer</h3>
+            <p>For transfering Token from player to player you need to initialize fromplayerGameId, toplayerGameId,
+              tokenId and amount.</p>
+            <pre style="display: grid; grid-template-columns:auto auto; gap:1rem;">
+
+            <code class="curl">
+              <h5>Query</h5>
+mutation transferTokenPlayerToPlayer ($transfer: TokenTransferPlayersInput) {
+  transferTokenPlayerToPlayer (transfer: $transfer) {
+      status
+      message
+  }
+}
+            </code>
+            
+            <code class="curl">
+              <h5>GraphQL Variables</h5>
+{
+  "transfer": {
+    "fromplayerGameId": "",
+    "toplayerGameId": "",
+    "tokenId": "",
+    "amount": "",
+    "network": ""
+  }
+}
+                            </code>
+          </pre>
+          </section>
+
+
+          <hr class="divider">
+
+          <!-- API playground
+		  ============================ -->
+          <section id="idocs_apiplayground">
+            <h3>API Playground</h3>
+            <p> <a href="https://api.solidium.io/" target="_blank"> You can access to playground from here.
+              </a></p>
+          </section>
+
+          <!-- API inputs
+		  ============================ -->
+          <section id="idocs_apiinputs">
+            <h3>API Inputs</h3>
+            <p>Ypu can use inputs below to use playground.</p>
+            <pre>
+            <code>
+              type BaseResponse {
+                status: String!
+                message: String!
+              }
+              
+              type User {
+                id: ID!
+                username: String!
+                email: String!
+                password: String!
+                createdAt: String!
+              }
+              
+              input CreateUserInput {
+                username: String!
+                password: String!
+                email: String!
+              }
+              
+              input UpdateUsernameInput {
+                newusername: String!
+              }
+              
+              input UpdatePasswordInput {
+                newpassword: String!
+              }
+              
+              input UpdateEmailInput {
+                newemail: String!
+              }
+              
+              type TeamMember {
+                id: ID!
+                username: String!
+                createdAt: String!
+              }
+              
+              type TeamMemberPayload {
+                members: [TeamMember]
+                info: BaseResponse
+              }
+              
+              input CreateTeamMemberInput {
+                username: String!
+                password: String!
+                role: String!
+              }
+              
+              input TeamRoleCompanies {
+                companyId: String!
+                gameIds: [String]
+              }
+              
+              input CreateTeamRoleInput {
+                companies: [TeamRoleCompanies]
+                teamId: String!
+                role: String!
+              }
+              
+              type GameCompany {
+                id: String
+                game: Game
+                company: Company
+                role: String
+              }
+              
+              type ReadTeamRolePayload {
+                games: [GameCompany]
+                info: BaseResponse
+              }
+              
+              input LoginUserInput {
+                username: String!
+                password: String!
+              }
+              
+              type LoginUserPayload {
+                token: String
+                expireTime: String
+                role: String
+                info: BaseResponse!
+              }
+              
+              type Wallet {
+                id: String!
+                type: String!
+                publicKey: String!
+                privateKey: String!
+                createdAt: String!
+                balance: String!
+              }
+              
+              type WalletInfoPayload {
+                wallets: [Wallet]
+                info: BaseResponse!
+              }
+              
+              type Company {
+                id: String!
+                name: String!
+                description: String!
+                image: String!
+                createdAt: String!
+              }
+              
+              input CompanyCreateInput {
+                name: String!
+                description: String!
+                image: String
+              }
+              
+              type CompanyCreatePayload {
+                company: Company
+                info: BaseResponse!
+              }
+              
+              type CompaniesReadPayload {
+                companies: [Company]
+                info: BaseResponse!
+              }
+              
+              input CompanyNameUpdateInput {
+                newname: String!
+                companyId: String!
+              }
+              
+              input CompanyDescriptionUpdateInput {
+                newdescription: String!
+                companyId: String!
+              }
+              
+              type Game {
+                id: String!
+                name: String!
+                description: String!
+                image: String!
+                createdAt: String!
+                apiKey: String!
+              }
+              
+              input GameCreateInput {
+                name: String!
+                description: String!
+                image: String!
+                companyId: String!
+              }
+              
+              type GameCreatePayload {
+                game: Game
+                info: BaseResponse!
+              }
+              
+              input GameReadInput {
+                companyId: String!
+              }
+              
+              type GamesReadPayload {
+                games: [Game]
+                info: BaseResponse!
+              }
+              
+              input UpdateGameNameInput {
+                newname: String!
+                gameId: String!
+              }
+              
+              input UpdateGameDescriptionInput {
+                newdescription: String!
+                gameId: String!
+              }
+              
+              type Collection {
+                id: String
+                name: String
+                description: String
+                image: String
+                contractAddres: String
+                metaDataURL: String
+                imageURL: String
+                type: String
+                count: String
+                price: String
+                network: String
+                relaseDate: String
+                isLaunchPad: String
+              }
+              
+              input CollectionCreateInput {
+                name: String!
+                symbol: String!
+                description: String!
+                imageURL: String!
+                type: String!
+                count: String!
+                price: String!
+                gameId: String!
+                metaDataURL: String!
+                metadataString: String!
+                companyId: String!
+                relaseDate: String!
+                isLaunchPad: String!
+                isMintAlltoAdmin: String!
+                mintNftCount: String!
+                isSubdomain: String!
+                subdomain: String!
+              }
+              
+              type CollectionCreatePayload {
+                collection: Collection
+                info: BaseResponse!
+              }
+              
+              input CollectionReadInput {
+                gameId: String!
+                companyId: String!
+              }
+              
+              type CollectionReadPayload {
+                collection: [Collection]
+                info: BaseResponse!
+              }
+              
+              type Asset {
+                id: String!
+                name: String!
+                imageURL: String!
+                metadataURL: String!
+                metadata: String!
+                tokenId: String!
+              }
+              
+              input AssetReadInput {
+                collectionId: String!
+              }
+              
+              type AssetReadPayload {
+                assets: [Asset]
+                info: BaseResponse!
+              }
+              
+              type Token {
+                id: String!
+                name: String!
+                symbol: String!
+                supply: String!
+                contractAddress: String!
+                createdAt: String!
+              }
+              
+              input TokenCreateInput {
+                name: String!
+                symbol: String!
+                supply: String!
+              }
+              
+              type TokenCreatePayload {
+                token: Token
+                info: BaseResponse!
+              }
+              
+              type TokenReadPayload {
+                tokens: [Token]
+                info: BaseResponse!
+              }
+              
+              type TokenGame {
+                token: Token!
+                game: Game!
+              }
+              
+              input TokenGameInput {
+                tokenId: String!
+                gameId: String!
+              }
+              
+              type TokenGameReadPayload {
+                tokenGames: [TokenGame]
+                info: BaseResponse!
+              }
+              
+              type Transaction {
+                id: String!
+                message: String!
+                type: String!
+                createdAt: String!
+              }
+              
+              type readTransactionPayload {
+                transactions: [Transaction]
+                info: BaseResponse!
+              }
+              
+              type Player {
+                id: String!
+                playerGameId: String!
+              }
+              
+              input createPlayerInput {
+                playerGameId: String!
+              }
+              
+              type TokenBalance {
+                tokenId: String!
+                balance: String!
+                tokenName: String!
+                tokenSymbol: String!
+              }
+              
+              type readTokenBalancePayload {
+                tokenBalance: [TokenBalance]
+                info: BaseResponse!
+              }
+              
+              input TokenTransferInput {
+                playerGameId: String!
+                tokenId: String!
+                amount: String!
+              }
+              
+              input TokenTransferPlayersInput {
+                fromplayerGameId: String!
+                toplayerGameId: String!
+                tokenId: String!
+                amount: String!
+              }
+              
+              input MintNFTInput {
+                playerGameId: String!
+                collectionId: String!
+              }
+              
+              input MintFTInput {
+                playerGameId: String!
+                collectionId: String!
+                count: String!
+              }
+              
+              input TransferNFT {
+                playerGameId: String!
+                collectionId: String!
+                assetId: String!
+              }
+              
+              type PlayerAssets {
+                metadataURL: String!
+              }
+              
+              input ReadPlayerAssetsInput {
+                playerGameId: String!
+                collectionId: String!
+              }
+              
+              type ReadPlayerAssetsPayload {
+                playerAssets: [String]
+                info: BaseResponse!
+              }
+              
+              input BurnAssetInput {
+                collectionId: String!
+                assetId: String!
+              }
+              
+              type Collection2 {
+                id: String!
+                name: String!
+                description: String!
+                image: String!
+                contractAddres: String!
+                metaDataURL: String!
+                imageURL: String!
+                type: String!
+                count: String!
+                price: String!
+                network: String!
+                relaseDate: String!
+                isLaunchPad: String!
+                Assets: [Asset]
+              }
+              
+              type Test {
+                collection: [Collection2]
+                info: BaseResponse!
+              }
+              
+              input ButNFTWithAVAX {
+                playerGameId: String!
+                collectionId: String!
+                assetId: String!
+                amount: String!
+              }
+              
+              input BuyNFTWithToken {
+                playerGameId: String!
+                tokenId: String!
+                amount: String!
+                collectionId: String!
+                assetId: String!
+              }
+              
+              input TransferNFTPlayer {
+                fromplayerGameId: String!
+                toplayerGameId: String!
+                collectionId: String!
+                assetId: String!
+              }
+              
+              type TokensGames {
+                id: String!
+                tokenId: String!
+                gameId: String!
+                userId: String!
+                game: Game
+              }
+              
+              type TokenGamesPayload {
+                tokenGames: [TokensGames]
+                info: BaseResponse!
+              }
+              
+              type Query {
+                user: String!
+                wallet: WalletInfoPayload!
+                readTeam: TeamMemberPayload!
+                readTeamRoles(memberId: String): ReadTeamRolePayload
+                readCompany: CompaniesReadPayload!
+                readGames(game: GameReadInput): GamesReadPayload!
+                readAllGames: GamesReadPayload!
+                readCollection(collection: CollectionReadInput): CollectionReadPayload!
+                readAsset(asset: AssetReadInput): AssetReadPayload!
+                readToken: TokenReadPayload!
+                readTokenGame: TokenGameReadPayload!
+                readTokenGames(tokenId: String): TokenGamesPayload!
+                readTransaction: readTransactionPayload!
+                readPlayerWallet(playerGameId: String!): WalletInfoPayload!
+                readPlayerTokenBalance(playerGameId: String!): readTokenBalancePayload!
+                readPlayerAssets(input: ReadPlayerAssetsInput): ReadPlayerAssetsPayload!
+                readCollectionsInGame: Test!
+                readLauncpads: CollectionReadPayload!
+                readCollectionsForMarketPlace: CollectionReadPayload!
+              }
+              
+              type Mutation {
+                createUser(user: CreateUserInput): BaseResponse!
+                updateUserName(user: UpdateUsernameInput): BaseResponse!
+                updateUserPassword(user: UpdatePasswordInput): BaseResponse!
+                updateUserEmail(user: UpdateEmailInput): BaseResponse!
+                deleteUser: BaseResponse!
+                loginUser(user: LoginUserInput): LoginUserPayload!
+                createMember(member: CreateTeamMemberInput): BaseResponse!
+                createMemberRole(member: CreateTeamRoleInput): BaseResponse!
+                deleteMember(memberId: String!): BaseResponse!
+                deleteMemberRole(roleId: String!): BaseResponse!
+                createCompany(company: CompanyCreateInput): CompanyCreatePayload!
+                updateCompanyName(company: CompanyNameUpdateInput): BaseResponse!
+                updateCompanyDescription(company: CompanyDescriptionUpdateInput): BaseResponse!
+                createGame(game: GameCreateInput): GameCreatePayload!
+                updateGameName(game: UpdateGameNameInput): BaseResponse!
+                updateGameDescription(game: UpdateGameDescriptionInput): BaseResponse!
+                deleteGame(gameId: String!): BaseResponse!
+                createCollection(collection: CollectionCreateInput): CollectionCreatePayload!
+                deleteCollection(collectionId: String!): BaseResponse!
+                createToken(token: TokenCreateInput): TokenCreatePayload!
+                createTokenGame(tokenGame: TokenGameInput): BaseResponse!
+                createPlayer(player: createPlayerInput): BaseResponse!
+                transferTokenAdminToPlayer(transfer: TokenTransferInput): BaseResponse!
+                transferTokenPlayerToAdmin(transfer: TokenTransferInput): BaseResponse!
+                transferTokenPlayerToPlayer(transfer: TokenTransferPlayersInput): BaseResponse!
+                mintNFT(mint: MintNFTInput): BaseResponse!
+                mintFT(mint: MintFTInput): BaseResponse!
+                transferNFTPlayerToAdmin(transfer: TransferNFT): BaseResponse!
+                transferNFTAdminToPlayer(transfer: TransferNFT): BaseResponse!
+                transferNFTPlayerToPlayer(transfer: TransferNFTPlayer): BaseResponse!
+                buyNFT(transfer: ButNFTWithAVAX): BaseResponse!
+                buyNFTWithToken(transfer: BuyNFTWithToken): BaseResponse!
+                burnAsset(burn: BurnAssetInput): BaseResponse!
+              }
+            </code>
+          </pre>
+          </section>
+
+
+          <hr class="divider">
+
+
+          <!-- FAQ
+		============================ -->
+          <!--
+          <section id="idocs_faq">
+            <h2>FAQ</h2>
+            <p class="text-4">A FAQ is a list of frequently asked questions (FAQs) and answers on a particular topic.
+            </p>
+
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="accordion accordion-alterate arrow-right" id="popularTopics">
+                  <div class="card">
+                    <div class="card-header" id="heading1">
+                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse1"
+                          aria-expanded="false" aria-controls="collapse1">What does royalty free mean?</a> </h5>
+                    </div>
+                    <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#popularTopics">
+                      <div class="card-body"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not
+                        only five centuries, but also the leap into electronic typesetting, remaining essentially
+                        unchanged. </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="heading2">
+                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse2"
+                          aria-expanded="false" aria-controls="collapse2">What is a single application?</a> </h5>
+                    </div>
+                    <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#popularTopics">
+                      <div class="card-body"> Iisque Anim pariatur cliche reprehenderit, enim eiusmod high life
+                        accusamus terry richardson ad squid. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+                        moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch
+                        et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+                        proident. Ad vegan excepteur butcher vice lomo. </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="heading3">
+                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse3"
+                          aria-expanded="false" aria-controls="collapse3">What are some examples of permitted end
+                          products?</a> </h5>
+                    </div>
+                    <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#popularTopics">
+                      <div class="card-body"> Iisque persius interesset his et, in quot quidam persequeris vim, ad mea
+                        essent possim iriure. Mutat tacimates id sit. Ridens mediocritatem ius an, eu nec magna
+                        imperdiet. </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="heading4">
+                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse4"
+                          aria-expanded="false" aria-controls="collapse4">I'm not sure if my use is covered. What should
+                          I do?</a> </h5>
+                    </div>
+                    <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#popularTopics">
+                      <div class="card-body"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on
+                        it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+                        craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                        vice lomo. </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="heading5">
+                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse5"
+                          aria-expanded="false" aria-controls="collapse5">What is a single application?</a> </h5>
+                    </div>
+                    <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#popularTopics">
+                      <div class="card-body"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on
+                        it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+                        craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
+                        vice lomo. </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="heading6">
+                      <h5 class="mb-0"> <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapse6"
+                          aria-expanded="false" aria-controls="collapse6">Am I allowed to modify the item that I
+                          purchased?</a> </h5>
+                    </div>
+                    <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#popularTopics">
+                      <div class="card-body"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on
+                        it squid single-origin coffee nulla assumenda shoreditch et. Ad vegan excepteur butcher vice
+                        lomo. </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </section>
+
+          <hr class="divider">-->
+
+          <!-- Source & Credits
+		============================ 
+          <section id="idocs_source_credits">
+            <h2>Source & Credits</h2>
+            <h4>Images:</h4>
+            <ul>
+              <li>Unsplash - <a target="_blank" href="https://unsplash.com/">https://unsplash.com/</a></li>
+            </ul>
+            <h4>Fonts:</h4>
+            <ul>
+              <li>Icons Font Face - <a target="_blank" href="https://fontawesome.com/">https://fontawesome.com/</a></li>
+            </ul>
+            <h4>Scripts:</h4>
+            <ul>
+              <li>jQuery - <a target="_blank" href="http://www.jquery.com/">http://www.jquery.com/</a></li>
+              <li>Bootstrap 4 - <a target="_blank" href="http://getbootstrap.com/">http://getbootstrap.com/</a></li>
+              <li>Highlight Js - <a target="_blank" href="https://highlightjs.org/">https://highlightjs.org/</a></li>
+              <li>jQuery easing - <a target="_blank"
+                  href="http://gsgd.co.uk/sandbox/jquery/easing/">http://gsgd.co.uk/sandbox/jquery/easing/</a></li>
+              <li>Magnific Popup - <a target="_blank"
+                  href="http://dimsemenov.com/plugins/magnific-popup/">http://dimsemenov.com/plugins/magnific-popup/</a>
+              </li>
+            </ul>
+          </section>
+
+          <hr class="divider">-->
+
+          <!-- Support
+		============================ 
+          <section id="idocs_support">
+            <h2>Support</h2>
+            <p>If this documentation doesn't answer your questions, So, Please send us Email via <a
+                class="btn btn-primary" target="_blank" href="https://themeforest.net/user/harnishdesign#contact">Item
+                Support Page</a></p>
+            <p> We are located in GMT +5:30 time zone and we answer all questions within 12-24 hours in weekdays. In
+              some rare cases the waiting time can be to 48 hours. (except holiday seasons which might take longer).</p>
+            <div class="alert alert-warning mb-4"><span class="badge badge-danger text-uppercase">Note:</span> While we
+              aim to provide the best support possible, please keep in mind that it only extends to verified buyers and
+              only to issues related to our template like bugs and errors. Custom modifications or third party module
+              implementations are not included.</div>
+            <h4>Don’t forget to Rate this template
+              <i class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i
+                class="fas fa-star text-warning"></i> <i class="fas fa-star text-warning"></i> <i
+                class="fas fa-star text-warning"></i>
+            </h4>
+            <div class="alert alert-success">
+              Please Add your Review (Opinion) for Our template. It would be a great support for us.<br>
+              Go to your <strong>Themeforest Profile</strong> > <strong>Downloads Tab</strong> > & then You can Rate &
+              Review for our template.<br>
+              Thank You.
+            </div>
+          </section>
+
+          <hr class="divider">-->
+
+          <!-- Changelog
+		============================ 
+
+          <section id="idocs_changelog">
+            <h2>Changelog</h2>
+            <p class="text-4">See what's new added, changed, fixed, improved or updated in the latest versions. </p>
+            <p class="alert alert-info mb-5"> For Future Updates Follow Us <a target="_blank" href="#">@linkedin</a> /
+              <a target="_blank" href="#">@twitter</a> / <a target="_blank" href="#">@youtube</a>
+            </p>
+
+            <h3 id="v1-1">Version 1.1 <small class="text-muted">(12 Oct, 2020)</small></h3>
+            <ul class="changelog">
+              <li><span class="badge badge-success">Added</span> Your information here for added new feature</li>
+              <li><span class="badge badge-danger">Fixed</span> Some minor bugs for browser compatibility</li>
+              <li><span class="badge badge-danger">Fixed</span> Some minor bugs for responsive</li>
+              <li><span class="badge badge-info">Updated</span> FontAwesome to Latest Version</li>
+              <li><span class="badge badge-info">Updated</span> Bootstrap to Latest Version</li>
+              <li><span class="badge badge-info">Updated</span> Improvements in CSS and JS</li>
+            </ul>
+
+            <hr class="divider">
+
+            <h3 id="v1-0">Version 1.0 <small class="text-muted">(8 April, 2020)</small></h3>
+            <p>Initial Release</p>
+          </section>
+
+        </div>
+      </div>
+
+    </div>-->
+          <!-- Content end -->
+
+          <!-- Footer
+  ============================ 
+    <footer id="footer" class="section bg-dark footer-text-light">
+      <div class="container">
+        <ul class="social-icons social-icons-lg social-icons-muted justify-content-center mb-3">
+          <li><a data-toggle="tooltip" href="https://tr.linkedin.com/company/argedor-bili-im-teknolojileri-ltd-"
+              target="_blank" title="" data-original-title="Linkedin"><i class="fab fa-linkedin"></i></a></li>
+          <li><a data-toggle="tooltip" href="https://twitter.com/argedorbilisim" target="_blank" title=""
+              data-original-title="Twitter"><i class="fab fa-twitter"></i></a></li>
+          <li><a data-toggle="tooltip" href="https://www.youtube.com/channel/UCGNrOj9Q3FWyX4lN8I0uv4A" target="_blank"
+              title="" data-original-title="Youtube"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+        <p class="text-center">Copyright &copy; 2022 <a href="#">iDocs</a>. All Rights
+          Reserved.</p>
+        <p class="text-2 text-center mb-0">Design &amp; Develop by <a class="btn-link" target="_blank"
+            href="#">HarnishDesign</a>.</p>
+      </div>
+    </footer>
+    
+  </div>-->
+          <!-- Document Wrapper end -->
+
+          <!-- Back To Top -->
+          <a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i
+              class="fa fa-chevron-up"></i></a>
+
+          <!-- JavaScript
+============================ -->
+          <script src="assets/vendor/jquery/jquery.min.js"></script>
+          <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+          <!-- Highlight JS -->
+          <script src="assets/vendor/highlight.js/highlight.min.js"></script>
+          <!-- Easing -->
+          <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+          <!-- Magnific Popup -->
+          <script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+          <!-- Custom Script -->
+          <script src="assets/js/theme.js"></script>
+</body>
+
+</html>
